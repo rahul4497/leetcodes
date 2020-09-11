@@ -1,0 +1,22 @@
+# Pythagorean triplet in an array
+# using Python
+
+
+def triplet(arr, arr_size):
+    j = 0
+    for i in range(arr_size-2):
+        for k in range(j+1, arr_size):
+            for j in range(i+1, arr_size-1):
+                x = arr[i]*arr[i]
+                y = arr[j]*arr[j]
+                z = arr[k]*arr[k]
+                if x == y+z or y == x+z or z == x+y:
+                    return 1
+
+
+ar = [3, 12, 5, 13]
+ar_size = len(ar)
+if triplet(ar, ar_size):
+    print("Yes")
+else:
+    print("No")
